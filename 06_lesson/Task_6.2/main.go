@@ -17,5 +17,5 @@ func main() {
 
 	cntr := Contract{ID: 1, Number: "#000A101\\t01", Date: "2024-01-31"}
 
-	fmt.Println("ID:", cntr.ID, "Number:", cntr.Number, "Date:", cntr.Date)
+	fmt.Printf("%+v", cntr)
 }

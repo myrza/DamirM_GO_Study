@@ -16,8 +16,8 @@ type Contract struct {
 
 func main() {
 
-	cntr := Contract{ID: 1, Number: "#000A\n101", Date: "2024-01-31"}
+	cntr := Contract{ID: 1, Number: "#000A\\n101", Date: "2024-01-31"}
 
-	fmt.Printf("ID:%v Number:%#v Date:%v", cntr.ID, cntr.Number, cntr.Date)
+	fmt.Printf("%+v", cntr)
 
 }
