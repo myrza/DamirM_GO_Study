@@ -4,42 +4,30 @@
 Каждый цикл должен в консоль выводить текущее значение среза.
 Причём внутренние срезы должны содержать отступы для облегчения визуального восприятия.
 Внутренний срез на ключе 1 должен остановить все циклы, начиная со второго цикла.
-В консоли должно быть:
 
-v1: 1
-v2: 1
-v3: 1
-v4: 1
-v4: 2
-v1: 2
-v2: 1
-v3: 1
-v4: 1
-v4: 2
-v1: 3
-v2: 1
-v3: 1
-v4: 1
-v4: 2
 */
 
 package main
 
 import "fmt"
 
-func fruitMarket(fn string) int {
-	fmap := map[string]int{"апельсин": 5, "яблоки": 3, "сливы": 1, "груши": 0}
+func main() {
+	//k1 := 0
+	s := []int{1, 2, 3}
+	ln := len(s)
 
-	val, ok := fmap[fn]
-	if ok == false {
-		fmt.Printf("Фрукт %s не обнаружен\n", fn)
+	for i := 0; i < ln; i++ {
+		fmt.Println("v1:", s[i])
+
+		for j := 0; j < 1; j++ {
+			fmt.Println("\t v2:", s[j])
+			for k := 0; k < 1; k++ {
+				fmt.Println("\t\t v3:", s[k])
+				for n := 0; n < 2; n++ {
+					fmt.Println("\t\t\t v4:", s[n])
+				}
+			}
+		}
 	}
 
-	return val
-}
-
-func main() {
-	fn := "апельсин1"
-	//cnt := fruitMarket(fn)
-	fmt.Printf("%s всего:%v \n", fn, fruitMarket(fn))
 }

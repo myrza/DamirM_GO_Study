@@ -9,19 +9,23 @@ package main
 
 import "fmt"
 
-func fruitMarket(fn string) int {
+func fruitMarket(f string) int {
 	fmap := map[string]int{"апельсин": 5, "яблоки": 3, "сливы": 1, "груши": 0}
 
-	val, ok := fmap[fn]
+	val, ok := fmap[f]
 	if ok == false {
-		fmt.Printf("Фрукт %s не обнаружен\n", fn)
+		fmt.Printf("Фрукт %s не обнаружен\n", f)
 	}
 
 	return val
 }
 
 func main() {
-	fn := "апельсин1"
-	//cnt := fruitMarket(fn)
-	fmt.Printf("%s всего:%v \n", fn, fruitMarket(fn))
+	// первый кейс - фрукт есть
+	f := "апельсин"
+	fmt.Printf("%s всего:%v \n", f, fruitMarket(f))
+
+	// второй кейс - фрукта нет
+	f = "фейхуа"
+	fmt.Printf("%s всего:%v \n", f, fruitMarket(f))
 }

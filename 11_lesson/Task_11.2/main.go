@@ -13,7 +13,7 @@ import (
 func main() {
 	err1 := errors.New("Ошибка1")
 	err2 := fmt.Errorf("Ошибка2:%w", err1)
-	err3 := fmt.Errorf("Ошибка2:%w", err2)
+	err3 := fmt.Errorf("Ошибка3:%w", err2)
 
 	fmt.Println(errors.Unwrap(err3))
 

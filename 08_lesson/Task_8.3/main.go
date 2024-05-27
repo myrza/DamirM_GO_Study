@@ -7,9 +7,19 @@ package main
 
 import "fmt"
 
+type Animal struct {
+	name string
+}
+
 func main() {
 
-	a := [4]string{"яблоко", "груша", "помидор", "абрикос"}
-	a[2] = "персик"
-	fmt.Println(a)
+	a := Animal{}
+	m := map[string]Animal{
+		"слон":    a,
+		"бегемот": a,
+		"носорог": a,
+		"лев":     a,
+	}
+	delete(m, "бегемот")
+	fmt.Println(m)
 }

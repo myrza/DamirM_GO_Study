@@ -10,6 +10,8 @@ import "fmt"
 func main() {
 
 	a := [4]string{"яблоко", "груша", "помидор", "абрикос"}
+	fmt.Println("Было: ", a)
+	// меняем помидор на персик
 	a[2] = "персик"
-	fmt.Println(a)
+	fmt.Println("Стало: ", a)
 }
