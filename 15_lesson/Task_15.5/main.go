@@ -1,4 +1,4 @@
-/* ????
+/*
 Необходимо реализовать интерфейс
 
 type Meteo interface {
@@ -20,42 +20,47 @@ import (
 	"time"
 )
 
+type Meteo interface {
+	readTemp() int
+	changeTemp(t int)
+}
+
 type Celsius struct {
 	temp int
 	mu   sync.RWMutex
 }
 
-func (c *Celsius) ReadTemp() int {
+func (c *Celsius) readTemp() int {
 	c.mu.RLock()
 	defer c.mu.RUnlock()
 	return c.temp
 }
-func (c *Celsius) ChangeTemp(temp int) {
+
+func (c *Celsius) changeTemp(t int) {
 	c.mu.Lock()
 	defer c.mu.Unlock()
 
-	c.temp = temp
+	c.temp = t
 
 }
 
-/*
-	type Meteo interface {
-		ReadTemp() string
-		ChangeTemp(v string)
-	}
-*/
 func main() {
-	cc := Celsius{temp: 0}
-
+	c := Celsius{temp: 0}
 	for i := 0; i < 100; i++ {
-		go func() {
-			fmt.Println("Текущая температура окружающей среды:", cc.ReadTemp())
-		}()
-		go func() {
-			cc.ChangeTemp(rand.Intn(50))
-		}()
+		go read(&c)
+		go change(&c)
 
 	}
 	time.Sleep(2 * time.Second)
 
+}
+
+func read(m Meteo) {
+	fmt.Println("Текущая температура окружающей среды:", m.readTemp())
+
+}
+
+func change(m Meteo) {
+	t := rand.Intn(50)
+	m.changeTemp(t)
 }
