@@ -21,8 +21,8 @@ import (
 )
 
 type Meteo interface {
-	readTemp() int
-	changeTemp(t int)
+	ReadTemp() int
+	ChangeTemp(t int)
 }
 
 type Celsius struct {
@@ -30,13 +30,13 @@ type Celsius struct {
 	mu   sync.RWMutex
 }
 
-func (c *Celsius) readTemp() int {
+func (c *Celsius) ReadTemp() int {
 	c.mu.RLock()
 	defer c.mu.RUnlock()
 	return c.temp
 }
 
-func (c *Celsius) changeTemp(t int) {
+func (c *Celsius) ChangeTemp(t int) {
 	c.mu.Lock()
 	defer c.mu.Unlock()
 
@@ -56,11 +56,11 @@ func main() {
 }
 
 func read(m Meteo) {
-	fmt.Println("Текущая температура окружающей среды:", m.readTemp())
+	fmt.Println("Текущая температура окружающей среды:", m.ReadTemp())
 
 }
 
 func change(m Meteo) {
 	t := rand.Intn(50)
-	m.changeTemp(t)
+	m.ChangeTemp(t)
 }
