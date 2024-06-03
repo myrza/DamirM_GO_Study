@@ -20,6 +20,7 @@ func main() {
 	ch := make(chan int)
 	stop := make(chan struct{}, 2)
 	go func() {
+
 	OUT:
 		for {
 			select {
@@ -34,8 +35,10 @@ func main() {
 				continue
 			}
 		}
+
 		fmt.Println("завершение работы горутины_1")
 	}()
+
 	go func() {
 		var i int
 	OUT:
@@ -54,9 +57,12 @@ func main() {
 		}
 		fmt.Println("завершение работы горутины_2")
 	}()
+
+	stop <- struct{}{}
+	stop <- struct{}{}
+	stop <- struct{}{}
+
 	time.Sleep(5 * time.Second)
-	stop <- struct{}{}
-	stop <- struct{}{}
-	time.Sleep(time.Second)
+
 	fmt.Println("завершение работы главной горутины")
 }
