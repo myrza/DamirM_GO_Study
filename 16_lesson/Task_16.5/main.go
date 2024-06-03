@@ -1,33 +1,39 @@
-/*?????
-Не используя context и буферизованные каналы необходимо написать программу,
-которая будет запускать 10 рабочих горутин и одну капризную управляющую горутину.
-Каждая рабочая горутина с задержкой в 1 секунду должна выводить в stdout сообщение «сложные вычисления горутины: 1»,
-где 1 - порядковый номер горутины.
-Управляющая горутина через 3 секунды после своего запуска должна в stdout вывести «ой, всё!»,
-после чего рабочие горутины должны в stdout вывести «stop горутина: 1», где 1 - порядковый номер горутины,
-и завершить своё выполнение.
+/*
+Нужно запустить 5 горутин и остановить в некоторое время, которое рассчитывается по формуле: текущий момент + 2 секунды
 */
 
 package main
 
 import (
-	"context"
+	//"context"
 	"fmt"
+	"time"
 )
 
-type ctxKey string
-
 func main() {
-	ctx := context.Background()
-	var key1 ctxKey = "some key1"
-	var key2 ctxKey = "some key2"
+	quit := make(chan bool) // сигнальный канал для остановки горутин
 
-	ctx = context.WithValue(ctx, key1, "some value1")
-	do(ctx, key1)
-	ctx = context.WithValue(ctx, key2, "some value2")
-	do(ctx, key2)
-}
-func do(ctx context.Context, key ctxKey) {
+	for i := 1; i < 11; i++ {
 
-	fmt.Println(key, ":", ctx.Value(key))
+		go func() {
+			for {
+				select {
+				case <-quit:
+					fmt.Println("Стоп гоурутина:", i)
+					quit <- true
+					return
+				default:
+					fmt.Println("сложные вычисления горутины: ", i)
+					time.Sleep(time.Second)
+				}
+			}
+		}()
+	}
+
+	time.Sleep(3 * time.Second)
+	fmt.Println("ой, все!")
+	quit <- true
+
+	time.Sleep(10 * time.Second) // ждем окончания работы
+
 }
