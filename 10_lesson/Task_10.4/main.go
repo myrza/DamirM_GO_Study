@@ -11,11 +11,12 @@ package main
 import (
 	"fmt"
 
-	"github.com/myrza/module_hello"
+	v100 "github.com/myrza/module_hello/v100"
+	v110 "github.com/myrza/module_hello/v110"
 )
 
 func main() {
 
-	fmt.Println("module_hello")
-	module_hello.Version()
-}
+	fmt.Println("module_hello diferent version")
+	fmt.Println(v100.Version())
+	fmt.Println(v110.Version())
