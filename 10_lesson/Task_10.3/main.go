@@ -13,8 +13,7 @@ import (
 )
 
 func main() {
-	fmt.Println(first.Hello())
-	fmt.Println(second.Hello())
-	//message := fmt.Sprintf("Hello, my %s package!", )
-	//println(message)
+
+	fmt.Println("Используем пакет  first:", first.Hello())
+	fmt.Println("Используем пакет second:", second.Hello())
 }
