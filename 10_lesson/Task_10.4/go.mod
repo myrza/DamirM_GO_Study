@@ -1,8 +1,5 @@
-module Task
+module task
 
 go 1.22.0
 
-
-
-replace github.com/myrza/module_hello/v110 => github.com/myrza/module_hello v1.1.0
-
+require github.com/myrza/module_hello2 v1.0.0 // indirect

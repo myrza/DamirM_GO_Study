@@ -1,5 +1,3 @@
-module lesson
+module github.com/myrza/module_hello4/v2
 
 go 1.22.0
-
-require github.com/myrza/mymodule v1.0.0

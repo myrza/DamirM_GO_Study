@@ -1,16 +1,15 @@
 /*
-Необходимо создать карту с ключами: «слон», «бегемот», «носорог», «лев»;
-В качестве значений нужно использовать пустые структуры.
-Результат вывести в консоль.
+тест переадресации
 */
 
 package main
 
 import (
-	"github.com/myrza/mymodule"
+	"github.com/myrza/module_hello4/v2"
 )
 
 func main() {
 
-	mymodule.Version()
+	module_hello4.Version()
+	//v2.Version()
 }
