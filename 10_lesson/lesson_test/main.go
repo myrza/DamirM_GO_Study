@@ -5,12 +5,12 @@
 package main
 
 import (
-	v100 "github.com/myrza/module_hello5/v2@v1.0.0"
-	v110 "github.com/myrza/module_hello5@v1.1.0"
+	v1 "github.com/myrza/module_hello6"
+	//v100 "github.com/myrza/module_hello5/tree/v2"
 )
 
 func main() {
 
-	v110.Version()
-	v100.Version()
+	v1.Version()
+	//v100.Version()
 }

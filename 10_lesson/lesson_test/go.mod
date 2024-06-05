@@ -1,3 +1,5 @@
-module github.com/myrza/module_hello5/v2
+module lesson_test
 
 go 1.22.0
+
+require github.com/myrza/modul_hello6 v1.0.0 // indirect
