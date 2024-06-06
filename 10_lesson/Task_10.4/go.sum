@@ -1,0 +1,6 @@
+github.com/myrza/hello v1.0.0 h1:ZZ/oxuBRvQqkfqv4XpUDhojdSqq5iL1t/OkxQx8XMzI=
+github.com/myrza/hello v1.0.0/go.mod h1:3ZxH9QsoakE/iEeMP/4B6R1SfN4bYsgKpWjFHpRbenM=
+github.com/myrza/hello v1.1.0 h1:Gp7PneUKiTLnxYVxuejSABELGws4JUR20ZKYSKFBg2M=
+github.com/myrza/hello v1.1.0/go.mod h1:3ZxH9QsoakE/iEeMP/4B6R1SfN4bYsgKpWjFHpRbenM=
+github.com/myrza/hello/v2 v2.0.0 h1:6dNf6UbuiS/dcCFsnHUHmOcuKeTl8PqA4CbXpF2JtLg=
+github.com/myrza/hello/v2 v2.0.0/go.mod h1:Bs6GpjqvKr+FV02ui4ehChYs37haPn9V333QoBxVQwk=

@@ -12,13 +12,12 @@ package main
 import (
 	"fmt"
 
-	v "github.com/myrza/hello"
-	v2 "github.com/myrza/hello/v2"
+	"github.com/myrza/module_hello2"
 )
 
 func main() {
 
 	fmt.Println("module_hello diferent version")
-	v2.Version()
-	v.Version()
+	module_hello2.Version()
+
 }
