@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<paitent>
+ <Name>Зайчик</Name>
+ <Age>2</Age>
+ <Email>zayac@mail.ru</Email>
+</paitent>
+<paitent>
+ <Name>Лисичка</Name>
+ <Age>3</Age>
+ <Email>alice@mail.ru</Email>
+</paitent>
+<paitent>
+ <Name>Ёжик</Name>
+ <Age>10</Age>
+ <Email>ezh@mail.ru</Email>
+</paitent>

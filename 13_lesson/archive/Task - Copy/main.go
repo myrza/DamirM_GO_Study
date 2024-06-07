@@ -8,12 +8,11 @@ package main
 import (
 	//"encoding/json"
 	"encoding/json"
-	"encoding/xml"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
-	"sort"
 )
 
 type paitent struct {
@@ -31,9 +30,49 @@ type xml_patients struct {
 	List []xml_patient `xml:"patient"`
 }
 
+func Do(srcFile string, tgtFaile string) error {
+	fmt.Println(srcFile, tgtFaile)
+	srcF, err := os.Open("patients")
+	if err != nil {
+		return errors.New("Ошибка при попытке прочитать файл!")
+	}
+	defer srcF.Close()
+	fmt.Printf("%+v", srcF)
+
+	dec := json.NewDecoder(srcF)
+	res := make([]paitent, 0, 3)
+
+	for dec.More() {
+		var p paitent
+		err := dec.Decode(&p)
+		if err != nil {
+			log.Fatalln(err)
+		}
+		res = append(res, p)
+
+	}
+	fmt.Println("read file")
+	tgtF, err := ioutil.TempFile("./", tgtFaile)
+	if err != nil {
+		return errors.New("Не удалось создать файл для записи результата!")
+	}
+
+	err = json.NewEncoder(tgtF).Encode(res)
+	if err != nil {
+		return errors.New("Не удалось записать результат в файл")
+	}
+	tgtF.Close()
+
+	return nil
+
+}
 func main() {
 	fmt.Println("Начало работы ")
-	f, err := os.Open("patients.txt")
+	teststrin := "patients.txt"
+	testerr := Do(teststrin, "restest")
+	fmt.Println(testerr)
+
+	f, err := os.Open(teststrin) //os.Open("patients.txt")
 	if err != nil {
 
 		fmt.Printf("ошибка в файле: %+v \n", f)
@@ -41,7 +80,8 @@ func main() {
 		log.Fatalln(f)
 	}
 	defer f.Close()
-	dec := json.NewDecoder(f)
+
+	/*dec := json.NewDecoder(f)
 	res := make([]paitent, 0, 3)
 
 	for dec.More() {
@@ -121,5 +161,5 @@ func main() {
 		log.Fatalln(err)
 	}
 	f.Close()
-
+	*/
 }
