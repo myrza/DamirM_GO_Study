@@ -1,0 +1,10 @@
+2024/06/07 17:43:55 main.go:63: url: my_secret_is_wrong
+2024/06/07 17:43:55 main.go:64: resp: пользователь не авторизован
+2024/06/07 17:43:57 main.go:73: url: /hello
+2024/06/07 17:43:57 main.go:52: resp: Hello, Go!
+2024/06/07 17:43:57 main.go:53: resp: Hello, Go!
+2024/06/07 17:45:56 main.go:62: url: my_secret_is_wrong
+2024/06/07 17:45:56 main.go:63: resp: пользователь не авторизован
+2024/06/07 17:45:59 main.go:72: url: /hello
+2024/06/07 17:45:59 main.go:51: resp: Hello, Go!
+2024/06/07 17:45:59 main.go:52: resp: Hello, Go!
