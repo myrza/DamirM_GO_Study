@@ -8,3 +8,23 @@
 2024/06/07 17:45:59 main.go:72: url: /hello
 2024/06/07 17:45:59 main.go:51: resp: Hello, Go!
 2024/06/07 17:45:59 main.go:52: resp: Hello, Go!
+2024/06/07 18:02:56 main.go:72: url: /hello
+2024/06/07 18:02:56 main.go:51: resp: Hello, Go!
+2024/06/07 18:02:56 main.go:52: resp: Hello, Go!
+2024/06/07 18:02:58 main.go:62: url: my_secret_is_wrong
+2024/06/07 18:02:58 main.go:63: resp: пользователь не авторизован
+2024/06/07 18:03:11 main.go:62: url: my_secret_is_wrong_again
+2024/06/07 18:03:11 main.go:63: resp: пользователь не авторизован
+2024/06/07 18:03:16 main.go:72: url: /hello
+2024/06/07 18:03:16 main.go:51: resp: Hello, Go!
+2024/06/07 18:03:16 main.go:52: resp: Hello, Go!
+2024/06/07 18:04:41 main.go:61: url: my_secret_is_wrong_again
+2024/06/07 18:04:41 main.go:62: resp: пользователь не авторизован
+2024/06/07 18:04:47 main.go:61: url: my_secret_is_wrong
+2024/06/07 18:04:47 main.go:62: resp: пользователь не авторизован
+2024/06/07 18:04:50 main.go:71: url: /hello
+2024/06/07 18:04:50 main.go:51: resp: Hello, Go!
+2024/06/07 18:04:53 main.go:71: url: /hello
+2024/06/07 18:04:53 main.go:51: resp: Hello, Go!
+2024/06/07 18:05:24 main.go:61: url: my_secret_is_Im_Bond
+2024/06/07 18:05:24 main.go:62: resp: пользователь не авторизован

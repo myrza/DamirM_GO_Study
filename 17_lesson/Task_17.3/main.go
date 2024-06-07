@@ -49,7 +49,6 @@ func hello(res http.ResponseWriter, req *http.Request) {
 	//log.Println(res.Header())
 	msg := "Hello, Go!"
 	log.Println("resp:", msg)
-	log.Println("resp:", msg)
 
 	fmt.Fprint(res, msg)
 }
