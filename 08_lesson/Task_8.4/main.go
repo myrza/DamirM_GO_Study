@@ -7,19 +7,18 @@ package main
 
 import "fmt"
 
-type Animal struct {
-	name string
-}
+type empty_st struct{}
 
 func main() {
-
-	a := Animal{}
-	m := map[string]Animal{
-		"слон":    a,
-		"бегемот": a,
-		"носорог": a,
-		"лев":     a,
+	animals := map[string]empty_st{
+		"слон":    {},
+		"бегемот": {},
+		"носорог": {},
+		"лев":     {},
 	}
-	m["выдра"] = a
-	fmt.Println(m)
+
+	animals["выдра"] = empty_st{}
+
+	fmt.Println(animals)
+
 }
