@@ -23,13 +23,13 @@ func main() {
 
 		go func() {
 			for {
+				fmt.Println("сложные вычисления горутины: ", i)
 				select {
 				case <-quit:
 					fmt.Println("stop горутина:", i)
 					quit <- true
 					return
 				default:
-					fmt.Println("сложные вычисления горутины: ", i)
 					time.Sleep(time.Second)
 				}
 			}
